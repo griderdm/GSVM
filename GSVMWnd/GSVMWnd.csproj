@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DisplayAdapters\DisplayAdapters.csproj" />
+    <ProjectReference Include="..\GSVM.Components.Processors.CPU_1\CPU1.csproj" />
+    <ProjectReference Include="..\GSVM\GSVM.csproj" />
+    <ProjectReference Include="..\IODevices\IODevices.csproj" />
+    <ProjectReference Include="..\Monitors\Monitors.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OpenTK">
+      <HintPath>bin\Debug\net5.0-windows\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl">
+      <HintPath>bin\Debug\net5.0-windows\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

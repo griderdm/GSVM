@@ -1,0 +1,189 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
+    <RootNamespace>VMDebugger</RootNamespace>
+    <AssemblyName>VMDebugger</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Be.Windows.Forms.HexBox" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Be.Windows.Forms.HexBox">
+      <HintPath>M:\Virtual Machine\VMOS\bin\Be.Windows.Forms.HexBox.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=3.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.1.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=3.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.GLControl.3.1.0\lib\net20\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DisplayAdapters\DisplayAdapters.csproj">
+      <Project>{2b7e3cf9-5031-4686-9825-04eb9e7aa950}</Project>
+      <Name>DisplayAdapters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GSVM.Components.Processors.CPU_1\CPU1.csproj">
+      <Project>{8df80b65-ca6e-48a3-9419-36f6c17f16df}</Project>
+      <Name>CPU1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GSVM\GSVM.csproj">
+      <Project>{46fb98a3-b251-4119-8e29-077b23d8fdb4}</Project>
+      <Name>GSVM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IODevices\IODevices.csproj">
+      <Project>{005f605f-28f6-40dc-9b20-87c1e55dd45b}</Project>
+      <Name>IODevices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Monitors\Monitors.csproj">
+      <Project>{cc61eeb8-d2d4-4f63-8112-43488b38edd3}</Project>
+      <Name>Monitors</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E624C146-FA9C-424B-A273-DB787105D83F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VMDebugger</RootNamespace>
+    <AssemblyName>VMDebugger</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Be.Windows.Forms.HexBox">
+      <HintPath>..\..\..\..\Downloads\Compressed\Be.HexEditor-1.6.0\Be.HexEditor-1.6.0\bin\Be.Windows.Forms.HexBox.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=3.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.1.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=3.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.GLControl.3.1.0\lib\net20\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonitor.Designer.cs">
+      <DependentUpon>frmMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRAM.Designer.cs">
+      <DependentUpon>frmRAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegisters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegisters.Designer.cs">
+      <DependentUpon>frmRegisters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMonitor.resx">
+      <DependentUpon>frmMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRAM.resx">
+      <DependentUpon>frmRAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegisters.resx">
+      <DependentUpon>frmRegisters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DisplayAdapters\DisplayAdapters.csproj">
+      <Project>{2b7e3cf9-5031-4686-9825-04eb9e7aa950}</Project>
+      <Name>DisplayAdapters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GSVM.Components.Processors.CPU_1\CPU1.csproj">
+      <Project>{8df80b65-ca6e-48a3-9419-36f6c17f16df}</Project>
+      <Name>CPU1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GSVM\GSVM.csproj">
+      <Project>{46fb98a3-b251-4119-8e29-077b23d8fdb4}</Project>
+      <Name>GSVM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IODevices\IODevices.csproj">
+      <Project>{005f605f-28f6-40dc-9b20-87c1e55dd45b}</Project>
+      <Name>IODevices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Monitors\Monitors.csproj">
+      <Project>{cc61eeb8-d2d4-4f63-8112-43488b38edd3}</Project>
+      <Name>Monitors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
+-->

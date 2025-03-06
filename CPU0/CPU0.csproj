@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
+    <RootNamespace>GSVM.Components.Processors.CPU0</RootNamespace>
+    <AssemblyName>GSVM.Components.Processors.CPU0</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GSVM\GSVM.csproj">
+      <Project>{46fb98a3-b251-4119-8e29-077b23d8fdb4}</Project>
+      <Name>GSVM</Name>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Components\Coprocessors\" />
+    <Folder Include="Components\Mem\" />
+    <Folder Include="Components\Processors\" />
+  </ItemGroup>
+
+</Project>
